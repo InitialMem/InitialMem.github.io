@@ -1,5 +1,3 @@
-# Headline
+# Notes
 
-> An awesome project.
-
-Hello docsify!
+created by docsify
