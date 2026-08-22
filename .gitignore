@@ -1,0 +1,9 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+.vscode/
+.idea/
+
+.env*
+.DS_Store

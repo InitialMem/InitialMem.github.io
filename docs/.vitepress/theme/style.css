@@ -1,0 +1,198 @@
+:root {
+  --vp-font-family-base: Inter, "PingFang SC", "Microsoft YaHei", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --vp-font-family-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  --vp-c-brand-1: #2563eb;
+  --vp-c-brand-2: #3b82f6;
+  --vp-c-brand-3: #60a5fa;
+  --vp-c-brand-soft: rgba(37, 99, 235, 0.14);
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #1d4ed8 18%, #06b6d4 86%);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #dbeafe 12%, #ecfeff 72%);
+  --vp-home-hero-image-filter: blur(56px);
+  --vp-code-block-bg: #f8fafc;
+  --vp-custom-block-tip-border: transparent;
+  --vp-custom-block-tip-bg: #eff6ff;
+  --vp-custom-block-tip-text: #1e3a8a;
+}
+
+.dark {
+  --vp-c-brand-1: #60a5fa;
+  --vp-c-brand-2: #93c5fd;
+  --vp-c-brand-3: #bfdbfe;
+  --vp-c-brand-soft: rgba(96, 165, 250, 0.16);
+  --vp-home-hero-name-background: linear-gradient(120deg, #93c5fd 18%, #67e8f9 86%);
+  --vp-home-hero-image-background-image: linear-gradient(135deg, #1e3a8a 12%, #164e63 72%);
+  --vp-code-block-bg: #161b2a;
+  --vp-custom-block-tip-bg: rgba(30, 64, 175, 0.2);
+  --vp-custom-block-tip-text: #bfdbfe;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  color: #fff;
+  background: var(--vp-c-brand-1);
+}
+
+.VPNavBar {
+  backdrop-filter: saturate(150%) blur(12px);
+  background-color: color-mix(in srgb, var(--vp-c-bg) 86%, transparent);
+}
+
+.VPNavBar.has-sidebar .content-body {
+  background-color: transparent;
+}
+
+.VPNavBarTitle .title {
+  font-weight: 750;
+  letter-spacing: -0.02em;
+}
+
+.VPNavBarMenuLink,
+.VPSidebarItem .text {
+  font-weight: 500;
+}
+
+.VPSidebarItem.is-active > .item .text {
+  font-weight: 700;
+}
+
+.VPContent .content-container {
+  max-width: 800px;
+}
+
+.vp-doc {
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.vp-doc h1,
+.vp-doc h2,
+.vp-doc h3 {
+  letter-spacing: -0.025em;
+}
+
+.vp-doc h2 {
+  margin-top: 56px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc h3 {
+  margin-top: 34px;
+}
+
+.vp-doc :not(pre) > code {
+  border: 0;
+  border-radius: 5px;
+  font-size: 0.88em;
+  font-weight: 500;
+}
+
+.vp-doc div[class*="language-"] {
+  margin: 22px 0;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.dark .vp-doc div[class*="language-"] {
+  box-shadow: none;
+}
+
+.vp-doc table {
+  display: table;
+  width: 100%;
+  margin: 22px 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.vp-doc tr:nth-child(2n) {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc blockquote {
+  border-left-width: 3px;
+  color: var(--vp-c-text-2);
+}
+
+.VPHomeHero .name {
+  font-weight: 800;
+  letter-spacing: -0.055em;
+}
+
+.VPHomeHero .text {
+  max-width: 620px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+}
+
+.VPHomeHero .tagline {
+  max-width: 600px;
+  line-height: 1.75;
+}
+
+.VPHomeFeatures {
+  padding-top: 22px;
+}
+
+.VPFeature {
+  height: 100%;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 14px;
+  background: linear-gradient(145deg, var(--vp-c-bg-soft), var(--vp-c-bg));
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.VPFeature:hover {
+  border-color: var(--vp-c-brand-2);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
+  transform: translateY(-4px);
+}
+
+.VPFeature .icon {
+  font-size: 28px;
+}
+
+.VPFeature .title {
+  font-weight: 700;
+}
+
+.VPLocalSearchBox .shell {
+  border-radius: 12px;
+}
+
+:where(a, button, input, summary):focus-visible {
+  outline: 3px solid var(--vp-c-brand-1);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (max-width: 959px) {
+  .vp-doc {
+    font-size: 15px;
+  }
+
+  .vp-doc h2 {
+    margin-top: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
