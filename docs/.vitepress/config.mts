@@ -28,6 +28,7 @@ export default defineConfig({
       { text: "后端", link: "/backend/python" },
       { text: "工具", link: "/tools/stable-diffusion" },
       { text: "学习路线", link: "/fullstack-roadmap" },
+      { text: "待分类", link: "/others" },
     ],
 
     sidebar: {
