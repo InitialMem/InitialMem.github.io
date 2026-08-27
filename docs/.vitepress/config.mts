@@ -60,7 +60,6 @@ export default defineConfig({
           text: "工具",
           items: [
             { text: "Stable Diffusion", link: "/tools/stable-diffusion" },
-            { text: "ComfyUI 学习路径", link: "/comfyui-learning-path" },
           ],
         },
       ],
