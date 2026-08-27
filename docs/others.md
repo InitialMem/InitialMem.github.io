@@ -43,7 +43,7 @@ ventoy是可以让U盘能承载多个启动环境的工具，并且不需要重�
 
 如果只装系统，那么微pe里的windows安装器就可以胜任，如果需要多套启动环境则需要ventoy。
 
-## Motrix aria2 aria2 manager aria2 explorer
+## 涉及Aria2的相关软件
 
 motrix是aria2+gui
 
@@ -115,5 +115,39 @@ corepack enable
 ```cmd
 corepack install --global pnpm@latest
 ```
+
+## Bitwarden代理ssh后git推送问题
+
+确保git调用的ssh环境和现在使用的环境相同
+
+```cmd
+:: 先查看当前系统的使用的ssh
+where ssh
+
+::  配置git使用系统的ssh，猜测默认调用Git\usr\bin下的ssh
+git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
+```
+
+## 关闭cmd提示音
+
+cmd下如何关闭
+
+Settings→ Profiles→ Defaults→ Advanced→ Audible bell
+
+## 更改ComfyUI默认工作流位置
+
+使用目录联接的方式
+
+```cmd
+REM mklink /J "\Comfyui\user\default\workflows" "E:\AI\workflows"
+REM 注意源文件夹需要删除，这个操作相当于新建一个文件夹，联接到目标文件夹  
+mklink /J "源文件夹路径" "目标文件夹路径"
+```
+
+## 路由器的桥接和Mesh
+
+桥接：指的是将路由器通过网线或者wifi连接起来，将网络延伸出去，让设备处于同一网段，而不是再经过一层NAT/路由
+
+Mesh：指的是Mesh协议，桥接后的路由器可以通过Mesh协议共享网络中设备的连接情况，让路由器提供手机切换网络的建议，而不是仅靠手机自己判断
 
 
