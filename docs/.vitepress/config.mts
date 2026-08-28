@@ -2,9 +2,10 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   title: "编程笔记",
-  description: "前端、后端与开发工具的技术学习笔记",
+  description: "前端、后端与开发工具的学习笔记",
   lang: "zh-CN",
   titleTemplate: false,
+  lastUpdated: true,
   head: [
     ["link", { rel: "icon", href: "/vitepress-logo-mini.png" }],
     ["meta", { name: "theme-color", content: "#2563eb" }],
@@ -27,8 +28,7 @@ export default defineConfig({
       { text: "前端", link: "/frontend/html" },
       { text: "后端", link: "/backend/python" },
       { text: "工具", link: "/tools/stable-diffusion" },
-      { text: "学习路线", link: "/fullstack-roadmap" },
-      { text: "待分类", link: "/others" },
+      { text: "未分类", link: "/unclassified/others" },
     ],
 
     sidebar: {
@@ -60,10 +60,24 @@ export default defineConfig({
           text: "工具",
           items: [
             { text: "Stable Diffusion", link: "/tools/stable-diffusion" },
+            { text: "ComfyUI", link: "/tools/comfyui" },
           ],
         },
       ],
 
+      "/unclassified/": [
+        {
+          text: "未分类",
+          items: [
+            { text: "其他", link: "/unclassified/others" },
+            { text: "全栈学习路径", link: "/unclassified/fullstack-roadmap" },
+            {
+              text: "ComfyUI学习路径",
+              link: "/unclassified/comfyui-learning-path",
+            },
+          ],
+        },
+      ],
     },
     search: {
       provider: "local",

@@ -10,9 +10,6 @@ hero:
     - theme: brand
       text: 开始阅读
       link: /frontend/html
-    - theme: alt
-      text: GitHub
-      link: https://github.com/
 
 features:
   - icon: 🖥️
@@ -27,7 +24,7 @@ features:
     linkText: 开始学习
   - icon: 🛠️
     title: 开发工具
-    details: Stable Diffusion
+    details: Stable Diffusion, ComfyUI
     link: /tools/stable-diffusion
     linkText: 开始学习
 ---
