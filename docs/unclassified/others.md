@@ -12,7 +12,7 @@
 
 Win+R，输入
 
-```
+```bash
 shell:startup
 ```
 
@@ -67,8 +67,8 @@ aria2 explorer是用于将浏览器下载请求转发给aria2的工具
 
 如果电量有限，又希望保留现场，选择休眠，其实电脑默认就启用休眠，每次开关机大多数都属于从休眠中唤醒，同时快速启动就依赖休眠。
 
-```cmd
-:: 查看两者是否开启
+```bash
+REM 查看两者是否开启
 powercfg /a
 ```
 
@@ -106,26 +106,14 @@ corepack是包管理器的管理器
 
 首先启动pnpm的命令代理，由corepack处理pnpm命令
 
-```cmd
+```bash
 corepack enable
 ```
 
 然后执行安装命令
 
-```cmd
+```bash
 corepack install --global pnpm@latest
-```
-
-## Bitwarden代理ssh后git推送问题
-
-确保git调用的ssh环境和现在使用的环境相同
-
-```cmd
-:: 先查看当前系统的使用的ssh
-where ssh
-
-::  配置git使用系统的ssh，猜测默认调用Git\usr\bin下的ssh
-git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
 ```
 
 ## 关闭cmd提示音
@@ -138,7 +126,7 @@ Settings→ Profiles→ Defaults→ Advanced→ Audible bell
 
 使用目录联接的方式
 
-```cmd
+```bash
 REM mklink /J "\Comfyui\user\default\workflows" "E:\AI\workflows"
 REM 注意源文件夹需要删除，这个操作相当于新建一个文件夹，联接到目标文件夹  
 mklink /J "源文件夹路径" "目标文件夹路径"

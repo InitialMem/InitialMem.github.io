@@ -27,7 +27,7 @@ export default defineConfig({
       { text: "首页", link: "/" },
       { text: "前端", link: "/frontend/html" },
       { text: "后端", link: "/backend/python" },
-      { text: "工具", link: "/tools/stable-diffusion" },
+      { text: "工具", link: "/tools/git" },
       { text: "未分类", link: "/unclassified/others" },
     ],
 
@@ -61,6 +61,7 @@ export default defineConfig({
           items: [
             { text: "Stable Diffusion", link: "/tools/stable-diffusion" },
             { text: "ComfyUI", link: "/tools/comfyui" },
+            { text: "Git", link: "/tools/git" },
           ],
         },
       ],

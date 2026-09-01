@@ -14,17 +14,17 @@ hero:
 features:
   - icon: 🖥️
     title: 前端开发
-    details: HTML、CSS、JavaScript，Vue
+    details: HTML, CSS, JavaScript，Vue
     link: /frontend/html
     linkText: 开始学习
   - icon: ⚙️
     title: 后端开发
-    details: Python、Java、C++
+    details: Python, Java, C++
     link: /backend/java
     linkText: 开始学习
   - icon: 🛠️
     title: 开发工具
-    details: Stable Diffusion, ComfyUI
+    details: Git, Stable Diffusion, ComfyUI
     link: /tools/stable-diffusion
     linkText: 开始学习
 ---

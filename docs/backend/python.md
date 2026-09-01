@@ -1,4 +1,20 @@
-# 尚硅谷python教程
+# python
+
+## 查看已安装的python版本
+
+1. cmd
+
+```bash
+py -0p
+
+py -3.11 -m pip install requests
+```
+
+2. 使用uv切换版本
+
+```
+uv python install 3.10
+```
 
 ## 数据类型
 
@@ -69,7 +85,7 @@ print(f"解密后的文本为:{text}")
 # a和b是位置参数，调用函数时必须按照定义的顺序传入参数值。
 def func(a, b):
     print(f"a: {a}, b: {b}")
-    
+
 func(1, 2)
 
 # a和b是关键字参数，调用函数时可以按照任意顺序传入参数值，但必须使用参数名进行指定。
@@ -139,7 +155,7 @@ def factorial(n):
         return 1
     else:
         return n * factorial(n - 1)
-    
+
 print(factorial(5))
 
 def fibonacci(n):
@@ -179,6 +195,7 @@ print(x)
 ```
 
 ## 列表
+
 ```python
 """列表是一个有序的集合，可以包含任意类型的元素"""
 
@@ -206,18 +223,18 @@ list1.index(0) # 返回列表中第一个匹配的元素的索引
 list1.count('0') # 返回列表中指定元素的数量
 list1.reverse() # 将列表中的元素反转
 list1.sort() # 将列表中的元素排序
-
 ```
 
 ## 元组
+
 ```python
 """元组，不可变的有序集合，使用小括号定义"""
 
 tuple1 = (1, 2, 3, 4, 5)
-
 ```
 
 ## 序列
+
 ```python
 """序列，可以是列表、元组等有序集合"""
 
@@ -227,6 +244,7 @@ print(list1[0:3:2]) # 切片，返回列表中从索引0到索引3（不包括3�
 ```
 
 ## 集合
+
 ```python
 """集合，是无序且不重复的元素集合，使用大括号定义"""
 
@@ -235,6 +253,7 @@ frozen_set1 = frozenset({1, 2, 3, 4, 5}) # 冻结集合，不可变的集合
 ```
 
 ## 字典
+
 ```python
 """字典，是无序的键值对集合，使用大括号定义"""
 
@@ -242,6 +261,7 @@ dict1 = {'name': 'Alice', 'age': 30, 'city': 'New York'}
 ```
 
 ## 类
+
 ```python
 """类，是面向对象编程的基本单位，使用class关键字定义"""
 
@@ -273,7 +293,7 @@ class Person:
         name, year = info_str.split("-")
         age = datetime.now().year - int(year)
         return cls(name, age)
-    
+
     # 静态方法，通常用于定义与类相关但不依赖于类或实例的函数，可以通过类名调用，也可以通过对象调用，但必须使用@staticmethod装饰器进行修饰。
     # 例如工具方法，验证方法等。
     @staticmethod
@@ -308,10 +328,10 @@ print(Person.planet)
 # 给person1对象添加一个新的实例属性maxage，这个属性只属于person1对象，其他对象无法访问。
 person1.maxAge = 120 # type: ignore
 print(person1.maxAge) # type: ignore
-
 ```
 
 ## 权限控制
+
 ```python
 """类中的权限控制"""
 
@@ -326,7 +346,7 @@ class Person:
     @property
     def ssn(self):
         return self.__ssn
-    
+
     # 注册ssn的setter方法，用于设置私有属性__ssn的值
     @ssn.setter
     def ssn(self, value):
@@ -334,6 +354,7 @@ class Person:
 ```
 
 ## 魔法方法
+
 ```python
 """魔法方法，也称为特殊方法，是以双下划线开头和结尾的方法，用于实现类的特殊行为和操作。"""
 
@@ -346,13 +367,14 @@ class Person:
     # 在类中定义__str__方法，可以自定义对象的字符串表示，当使用print函数打印对象时会调用该方法。
     def __str__(self):
         return f"Person(name={self.name}, age={self.age})"
-    
+
 
 p1 = Person("Alice", 30)
 print(dir(p1)) # 查看p1对象的属性和方法
 ```
 
 ## 抽象类
+
 ```python
 """抽象类"""
 
@@ -367,7 +389,7 @@ class MustRun(ABC):
         pass
 
 class Person(MustRun):
-    
+
     def __init__(self, name):
         self.name = name
 
@@ -376,6 +398,7 @@ class Person(MustRun):
 ```
 
 ## 可变对象和不可变对象
+
 ```python
 """可变对象和不可变对象"""
 
@@ -397,6 +420,7 @@ print(id(b)) # a和b指向不同的内存地址
 ```
 
 ## 函数对象
+
 ```python
 """函数本身也是一个对象，函数对象可以赋值给变量，也可以作为参数传递给另一个函数，还可以作为另一个函数的返回值。"""
 
@@ -446,6 +470,7 @@ return_func()() # 输出：这是一个内部函数d
 ```
 
 ## 函数参数的打包和解包
+
 ```python
 """函数参数的打包和解包"""
 
@@ -459,10 +484,10 @@ list1 = [1, 2, 3]
 dict1 = {"name": "Alice", "age": 30}
 
 show_params(*list1, **dict1)
-
 ```
 
 ## 匿名函数
+
 ```python
 """匿名函数"""
 
@@ -477,6 +502,7 @@ isadult = lambda age: "adult" if age >= 18 else "child"
 ```
 
 ## 数据处理函数
+
 ```python
 """数据处理函数"""
 
@@ -526,6 +552,7 @@ print(result) # 输出：Hello World!
 ```
 
 ## 列表推导式
+
 ```python
 """列表推导式"""
 
@@ -547,10 +574,10 @@ names = ['Alice', 'Bob', 'Charlie', 'Alice']
 result = {f"{name}!" for name in names}
 
 # 没有元组推导式，但可以使用生成器表达式来创建一个生成器对象：
-
 ```
 
 ## 深拷贝和浅拷贝
+
 ```python
 """
 深拷贝和浅拷贝的区别就是复制的时候遇到可变对象深拷贝会递归复制一份，不可变对象直接复制引用，而浅拷贝无论可变对象还是不可变对象都直接复制引用。
@@ -571,6 +598,7 @@ print("d:", d)  # 输出: [1, 2, [3, 4]]
 ```
 
 ## 闭包
+
 ```python
 """
     闭包
@@ -606,6 +634,7 @@ closure_add_10 = add_by(10)
 ```
 
 ## 装饰器
+
 ```python
 """装饰器"""
 
@@ -659,6 +688,7 @@ say_hi()
 ```
 
 ## 类装饰器
+
 ```python
 """包含__call__方法的类就是类装饰器"""
 
@@ -681,7 +711,7 @@ hello_world()
 
 # 带参数的类装饰器
 class log_with_args:
-    
+
     def __init__(self, prefix):
         self.prefix = prefix
 
@@ -693,6 +723,7 @@ class log_with_args:
 ```
 
 ## 类型注释
+
 ```python
 """类型注解"""
 
@@ -707,10 +738,10 @@ dict1: dict = {"a": 1, "b": 2}
 
 def add(x: int, y: int) -> int:
     return x + y
-
 ```
 
 ## 异常处理
+
 ```python
 """代码中逻辑可能出错，导致程序崩溃，异常处理可以捕获错误，继续执行程序"""
 
@@ -725,10 +756,10 @@ else:
     print("No exceptions occurred.")    
 finally:
     print("This block will always execute.")
-
 ```
 
 ## 模块
+
 ```python
 import module1
 
@@ -738,10 +769,10 @@ from . import module1
 
 "通过 __all__ 来控制from 模块 import *能导入哪些内容"
 from module1 import *
-
 ```
 
 ## 包
+
 ```python
 """包就是一个包含了模块和__init__文件的文件夹"""
 
@@ -751,6 +782,7 @@ pay.pay()
 ```
 
 ## 迭代器
+
 ```python
 """可迭代对象和迭代器"""
 
@@ -857,7 +889,7 @@ class Fibo:
 
     def __iter__(self):
         return self
-    
+
     def __next__(self):
         if self.index >= self.total:
             raise StopIteration
@@ -867,7 +899,7 @@ class Fibo:
             value = self.pre + self.cur
             self.pre = self.cur
             self.cur = value
-        
+
         self.index += 1
         return value
 
@@ -897,10 +929,10 @@ tracemalloc.start()
 f2 = fibo(10000)
 m2 = tracemalloc.get_traced_memory()[1]
 print(m2 / 1024 / 1024)
-
 ```
 
 ## 生成器
+
 ```python
 """生成器"""
 
@@ -931,6 +963,7 @@ print(c2)
 ```
 
 ## 文件
+
 ```python
 """文件的分类"""
 
@@ -1043,6 +1076,7 @@ with open("案例/a.txt", "rt", encoding="utf-8") as file:
 ```
 
 ## with关键字
+
 ```python
 """with关键字，用于管理程序中需要成对出现的操作"""
 "让编码者只关心具体要做的事，进入和离开的事情由python自动处理"
@@ -1080,6 +1114,7 @@ open("", "")
 ```
 
 ## 写入文件
+
 ```python
 """写入文件"""
 
@@ -1125,10 +1160,10 @@ with open("案例/a.txt", "rt+", encoding="utf-8") as file3:
 
 # endregion
 # ---------------------------- 组合模式（End）   ----------------------------
-
 ```
 
 ## 目录操作
+
 ```python
 """目录操作"""
 
@@ -1175,10 +1210,10 @@ for item in result:
 
 # ⚠️危险操作：删除有内容的目录
 # shutil.rmtree("D:/demo")
-
 ```
 
 ## 使用process创建进程
+
 ```python
 """Process"""
 from multiprocessing import Process
@@ -1198,7 +1233,7 @@ def study():
 # 在启动新的进程的时候，会找到传递的函数的定义所在的模块，执行该模块，所以，如果不加__name__ == 'main' 那么就会出现无限递归的情况
 if __name__ == '__main__':
     print("这是主进程的第一行")
-    
+
     # 🔸group： 默认值为None（应当始终为None）。
     # 🔸target：子进程要执行的可调用对象，默认值为 None。
     # 🔸name： 进程名称，默认为 None ，如果设置为 None，Python 会自动分配名字。
@@ -1218,6 +1253,7 @@ if __name__ == '__main__':
 ```
 
 ## 进程锁
+
 ```python
 """进程锁，给多个进程同一个锁，只有获得锁的进程才能执行之后的代码"""
 
@@ -1260,10 +1296,10 @@ if __name__ == '__main__':
 
     p1.start()
     p2.start()
-
 ```
 
 ## join方法
+
 ```python
 """join方法让调用它的进程等待，等待结束后再继续执行后面的代码"""
 from multiprocessing import Process
@@ -1289,6 +1325,7 @@ if __name__ == '__main__':
 ```
 
 ## terminate
+
 ```python
 """terminate方法用于终止进程，终止后finally代码块也不会执行"""
 
@@ -1332,10 +1369,10 @@ if __name__ == "__main__":
     print(p1.is_alive())
 
     print("我是主进程中的【最后一行】打印")
-
 ```
 
 ## 守护进程Daemon
+
 ```python
 """守护进程就是依附于主进程的子进程，主进程终止，守护进程也会跟着终止"""
 
@@ -1367,7 +1404,7 @@ if __name__ == '__main__':
     # "设置p1为主进程的守护进程，必须在start之前设置"
     p1 = Process(target=monitor, daemon=True)
     p2 = Process(target=testProcess)    
-    
+
     p1.start()
     p2.start()
 
@@ -1378,7 +1415,6 @@ if __name__ == '__main__':
             time.sleep(1)
 
     print(f'主进程结束')
-
 ```
 
 ## 进程之间不共享变量
@@ -1432,6 +1468,4 @@ if __name__ == '__main__':
     p4.start()
 
     print("主进程结束")
-
 ```
-
