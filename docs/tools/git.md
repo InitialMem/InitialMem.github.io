@@ -12,20 +12,29 @@ where ssh
 git config --global core.sshCommand "C:/Windows/System32/OpenSSH/ssh.exe"
 ```
 
+## Git core.autocrlf
+
+windows系统中的换行是/r/n，linux下是/n
+
+远端的仓库存的换行符永远是linux风格的，如果在windows下开发，就需要将/n->/r/n，默认git配置中的core.autocrlf = true的作用就是将换行符转化
+
+如果需要和远端统一，那么需要将这个配置设置为false，然后配置vscode为lf
+
 ## git不区分文件名大小写的问题
 
 默认git不区分文件名大小写，git config core.ignorecase -> true
 先查看git跟踪了哪个文件，防止中途没有使用git mv修改文件名后，导致追踪的文件丢失的问题
+
 ```bash
 git ls-files
 ```
 
 正确的做法是用临时文件名进行大小写重命名
+
 ```bash
 git mv Header.tsx temp.tsx
 git mv temp.tsx header.tsx
 ```
-
 
 ## 将当前提交追加到上一个提交中
 
