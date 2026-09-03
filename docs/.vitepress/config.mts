@@ -6,6 +6,10 @@ export default defineConfig({
   lang: "zh-CN",
   titleTemplate: false,
   lastUpdated: true,
+  ignoreDeadLinks: [
+    // 忽略所有 localhost 链接
+    /^http?:\/\/localhost/,
+  ],
   head: [
     ["link", { rel: "icon", href: "/vitepress-logo-mini.png" }],
     ["meta", { name: "theme-color", content: "#2563eb" }],

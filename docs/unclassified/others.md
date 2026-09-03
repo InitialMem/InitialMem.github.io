@@ -172,5 +172,5 @@ CORS(跨域资源共享)，指的是浏览器的一种安全机制：非同源�
 **如果不限制会发生什么**
 加入你已经登录了一个银行网站(https://bank.com)，这时你访问了https://evil.com，网站里写了fetch(https://bank.com/api/account)，就可以拿到你银行的信息
 **如何解除限制**
-后端：浏览器是否允许网站拿到非同源服务器返回的数据靠的是响应头中的CORS头(Access-Control-Allow-Origin : https://localhost:3000)是否符合规则(后端比较请求头中的origin和allow_hosts，返回CORS响应头)
+后端：浏览器是否允许网站拿到非同源服务器返回的数据靠的是响应头中的CORS头(Access-Control-Allow-Origin : http://localhost:3000)是否符合规则(后端比较请求头中的origin和allow_hosts，返回CORS响应头)
 前端：如果修改请求头中的origin呢，请求头中的origin头，由浏览器自动携带，一般不允许修改，但是如果利用postman、curl等工具可以修改，保证数据安全不是CORS的职责，靠的服务端实现的访问控制，CORS只是浏览器添加的一道读取权限检查，如果绕过浏览器，它就没有任何作用
